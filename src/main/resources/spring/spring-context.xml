@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans    
+                        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd    
+                        http://www.springframework.org/schema/context    
+                        http://www.springframework.org/schema/context/spring-context-3.2.xsd    
+                        http://www.springframework.org/schema/mvc
+                        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+                        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+                        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+    <context:annotation-config />
+	<context:component-scan base-package="cn.com.ttblog.sshbootstrap_table">
+	</context:component-scan>
+	<bean id="configProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="locations">
+			<list>
+				<value>classpath*:app.properties</value>
+				<value>classpath*:jdbc.properties</value>
+				<value>classpath*:jmx.properties</value>
+				<value>classpath*:swagger.properties</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="config"
+		class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+		<property name="properties" ref="configProperties" />
+	</bean>
+
+	<!-- 启用aop -->
+	<aop:aspectj-autoproxy />
+
+	<!-- 加载资源文件 -->
+<!-- 	<import resource="spring-jmx.xml" /> -->
+	<import resource="spring-hibernate.xml"/>
+	
+	<!-- jsonpfilter -->
+	<bean class="com.intera.util.web.servlet.filter.JsonpCallbackFilter"
+		id="jsonpCallbackFilter" />
+	<!-- loginFilter 登录处理 -->	
+<!-- 	<bean class="cn.com.ttblog.sshbootstrap_table.filter.LoginFilter" id="loginFilter" /> -->
+	<beans profile="develop">
+		<bean id="userFromSpring" class="cn.com.ttblog.sshbootstrap_table.model.User" lazy-init="false" init-method="init">
+			 <property name="id" value="1" />
+             <property name="name" value="develop-user" />
+		</bean>
+	</beans>
+	<beans profile="production">
+		<bean id="userFromSpring" class="cn.com.ttblog.sshbootstrap_table.model.User" lazy-init="false" init-method="init">
+			 <property name="id" value="2" />
+             <property name="name" value="production-user" />
+		</bean>
+	</beans>
+</beans>

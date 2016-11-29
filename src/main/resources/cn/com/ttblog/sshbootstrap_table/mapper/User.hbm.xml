@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 这里指定包名 ,建立类和数据表之间的关联-->
+<hibernate-mapping package="cn.com.ttblog.sshbootstrap_table.model">
+	<!-- name指定类名，table指定表名，如果同样可以省略 -->
+	<class name="User" table="user">
+<!-- 	     指定主键  column指定对应的列，名字相同可以省略 -->
+	     <id name="id" column="id"/>
+	     <property name="name" not-null="true"/>
+	     <property name="age" length="3"/>
+	     <property name="phone" length="11"/>
+	     <property name="sex" />
+	     <property name="deliveryaddress" />
+	     <property name="adddate" />
+	     <property name="comments" />
+	</class>
+</hibernate-mapping>

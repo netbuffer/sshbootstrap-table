@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+	<display-name>sshbootstrap-table</display-name>
+	<context-param>
+		<param-name>spring.profiles.active</param-name>
+		<param-value>production</param-value>
+	</context-param>
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>webapp.root</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:spring/spring-context.xml
+		</param-value>
+	</context-param>
+
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<async-supported>true</async-supported>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>ASYNC</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>ssh-filter</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ssh-filter</filter-name>
+		<url-pattern>*.do</url-pattern>
+		<dispatcher>ASYNC</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ssh-filter</filter-name>
+		<url-pattern>*.action</url-pattern>
+		<dispatcher>ASYNC</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>opensessioninview</filter-name>
+		<filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>opensessioninview</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>opensessioninview</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<jsp-config>
+		<!-- jsp-property-group配置 -->
+		<!-- <jsp-property-group> <url-pattern>*.jsp</url-pattern> 禁止EL表达式 设置，禁止后会原样输出 
+			<el-ignored>false</el-ignored> 禁止<%%>脚本设置 <scripting-invalid>true</scripting-invalid> 
+			抬头 <include-prelude>/prelude.jspf</include-prelude> 结尾 <include-coda>/coda.jspf</include-coda> 
+			清除jsp中由于page指令引入带来的空行 <trim-directive-whitespaces>true</trim-directive-whitespaces> 
+			</jsp-property-group> -->
+		<!-- <jsp-property-group> <url-pattern>/aa/*.jsp</url-pattern> 禁止EL表达式 
+			设置，禁止后会原样输出 <el-ignored>false</el-ignored> 禁止<%%>脚本设置 <scripting-invalid>true</scripting-invalid> 
+			抬头 <include-prelude>/prelude.jspf</include-prelude> 结尾 <include-coda>/coda.jspf</include-coda> 
+			清除jsp中由于page指令引入带来的空行 <trim-directive-whitespaces>true</trim-directive-whitespaces> 
+			</jsp-property-group> -->
+	</jsp-config>
+
+	<session-config>
+		<session-timeout>30</session-timeout>
+		<cookie-config>
+			<!-- http-only:true-确保cookie不能被客户端脚本访问 -->
+			<http-only>false</http-only>
+			<!-- 防止信息泄露，在https中传输启用 -->
+			<secure>false</secure>
+		</cookie-config>
+		<!-- Servlet3.0规范中的<tracking-mode>允许你定义JSESSIONID是存储在cookie中还是URL参数中 -->
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>

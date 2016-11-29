@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<!-- 指定由spring负责action对象的创建 -->
+<!-- 	spring com.opensymphony.xwork2.ObjectFactory-->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 所有匹配*.action的请求都由struts2处理 -->
+	<constant name="struts.action.extension" value="action,do" />
+	<!-- struts配置文件改动后，是否重新加载 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- 设置浏览器是否缓存静态内容 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<!-- 请求参数的编码方式 -->
+	<constant name="struts.i18n.encoding" value="utf-8" /> 
+	<!-- 每次HTTP请求系统都重新加载资源文件，有助于开发 -->
+	<constant name="struts.i18n.reload" value="true" /> 
+	<!-- 文件上传最大值 -->
+	<constant name="struts.multipart.maxSize" value="104857600" /> 
+	<!-- 让struts2支持动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" /> 
+	<!-- Action名称中是否还是用斜线 -->
+	<constant name="struts.enable.SlashesInActionNames" value="false" /> 
+	<!-- 允许标签中使用表达式语法 -->
+	<constant name="struts.tag.altSyntax" value="true" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="/" extends="struts-default,json-default">
+
+		<!-- 定义新的拦截器栈, 配置 prepare 拦截器栈的 alwaysInvokePrepare 参数值为 false -->
+		<interceptors>
+			<interceptor-stack name="sshStack">
+<!-- 				<interceptor-ref name="paramsPrepareParamsStack"> -->
+<!-- 					<param name="prepare.alwaysInvokePrepare">false</param> -->
+<!-- 				</interceptor-ref> -->
+				<interceptor-ref name="defaultStack">  
+				  <param name="exception.logEnabled">true</param>  
+				  <param name="exception.logLevel">error</param>  
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+
+		<!-- 使用新的拦截器栈 -->
+<!-- 		<default-interceptor-ref name="sshStack"></default-interceptor-ref> -->
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+		<action name="pf"
+			class="cn.com.ttblog.sshbootstrap_table.action.TestAction" method="execute">
+			<result name="success">/personinfo.jsp</result>
+		</action>
+	</package>
+
+</struts>
