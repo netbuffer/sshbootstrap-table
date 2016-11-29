@@ -1,9 +1,10 @@
 !/.gitignore
-/target/
-/catalina.base_IS_UNDEFINED/
+/target/*
+/catalina.base_IS_UNDEFINED/*
 /.classpath
 /.project
-/.settings/
+/.settings/*
 /reports
 /.pmd
 /.springBeans
+/.settings/*
