@@ -8,3 +8,4 @@
 /.pmd
 /.springBeans
 /.settings/*
+/target/
