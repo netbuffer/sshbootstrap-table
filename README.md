@@ -19,3 +19,13 @@ The project constructed by `maven`, please execute under the `src/main/java` `SQ
 项目采用`maven`构建，运行前请先执行`src/main/java`下的`sql`脚本到你的`mysql`数据库中，然后修改`src/main/resource`下的`jdbc.properties`配置文件中的数据库配置信息，进入项目目录，执行`mvn tomcat7:run`来运行
 
 git->clone;eclipse->File->Import->Existing Maven projects，导入到eclipse后，等maven依赖下载完，右键项目，run as->maven build->tomcat7:run
+
+> `sssbootstrap_table(spring+springmvc+spring data jpa)` github:[https://github.com/netbuffer/sssbootstrap_table](https://github.com/netbuffer/sssbootstrap_table)`/`git@osc:[https://git.oschina.net/netbuffer/sssbootstrap_table](https://git.oschina.net/netbuffer/sssbootstrap_table)    
+
+> `ssmbootstrap_table(spring+springmvc+mybatis)` github:[https://github.com/netbuffer/ssmbootstrap_table](https://github.com/netbuffer/ssmbootstrap_table)`/`git@osc:[https://git.oschina.net/gradle/ssmbootstrap_table](https://git.oschina.net/gradle/ssmbootstrap_table)        
+
+> `spring-boot-bootstrap_table(springboot)` github:[https://github.com/netbuffer/spring-boot-bootstrap_table](https://github.com/netbuffer/spring-boot-bootstrap_table)`/`git@osc:[https://git.oschina.net/netbuffer/spring-boot-bootstrap_table](https://git.oschina.net/netbuffer/spring-boot-bootstrap_table)   
+
+> `jfinal-bootstrap-table(jfinal)`github:[https://github.com/netbuffer/jfinal-bootstrap-table](https://github.com/netbuffer/jfinal-bootstrap-table)`/`git@osc:[http://git.oschina.net/gradle/jfinal-bootstrap-table](http://git.oschina.net/gradle/jfinal-bootstrap-table)  
+
+> `medoo_bootstrap_table(php5)`github:[https://github.com/netbuffer/medoo_bootstrap_table](https://github.com/netbuffer/medoo_bootstrap_table)`/`git@osc:[http://git.oschina.net/gradle/medoo_bootstrap_table](http://git.oschina.net/gradle/medoo_bootstrap_table)
