@@ -9,8 +9,11 @@
 * hibernate-validator
 * lombok
 
+# 微信扫码使用gitee工具
+![gitee工具](https://s1.ax1x.com/2018/08/10/P60MMF.jpg)
+
 > ### github:[https://github.com/netbuffer/sshbootstrap-table](https://github.com/netbuffer/sshbootstrap-table)
-> ### git@osc:[https://git.oschina.net/netbuffer/sshbootstrap-table](https://git.oschina.net/netbuffer/sshbootstrap-table)
+> ### git@osc:[https://gitee.com/netbuffer/sshbootstrap-table](https://gitee.com/netbuffer/sshbootstrap-table)
 
 ## How to run
 The project constructed by `maven`, please execute under the `src/main/java` `SQL script` to your `MySQL` database operation, and then modify the database configuration information `jdbc.properties` under the path `src/main/resource` configuration file in the project directory, enter, execute `mvn tomcat7:run` to run
@@ -21,14 +24,14 @@ The project constructed by `maven`, please execute under the `src/main/java` `SQ
 git->clone;eclipse->File->Import->Existing Maven projects，导入到eclipse后，等maven依赖下载完，右键项目，run as->maven build->tomcat7:run
 
 # other projects
-> `sssbootstrap_table(spring+springmvc+spring data jpa)` github:[https://github.com/netbuffer/sssbootstrap_table](https://github.com/netbuffer/sssbootstrap_table)`/`git@osc:[https://git.oschina.net/netbuffer/sssbootstrap_table](https://git.oschina.net/netbuffer/sssbootstrap_table)    
+> `sssbootstrap_table(spring+springmvc+spring data jpa)` github:[https://github.com/netbuffer/sssbootstrap_table](https://github.com/netbuffer/sssbootstrap_table)`/`git@osc:[https://gitee.com/netbuffer/sssbootstrap_table](https://gitee.com/netbuffer/sssbootstrap_table)    
 
-> `ssmbt(ssmbootstrap_table maven module )` github:[https://github.com/netbuffer/ssmbt](https://github.com/netbuffer/ssmbt)`/`git@osc:[https://git.oschina.net/netbuffer/ssmbt](https://git.oschina.net/netbuffer/ssmbt)
+> `ssmbt(ssmbootstrap_table maven module )` github:[https://github.com/netbuffer/ssmbt](https://github.com/netbuffer/ssmbt)`/`git@osc:[https://gitee.com/netbuffer/ssmbt](https://gitee.com/netbuffer/ssmbt)
 
-> `ssmbootstrap_table(spring+springmvc+mybatis)` github:[https://github.com/netbuffer/ssmbootstrap_table](https://github.com/netbuffer/ssmbootstrap_table)`/`git@osc:[https://git.oschina.net/gradle/ssmbootstrap_table](https://git.oschina.net/gradle/ssmbootstrap_table)        
+> `ssmbootstrap_table(spring+springmvc+mybatis)` github:[https://github.com/netbuffer/ssmbootstrap_table](https://github.com/netbuffer/ssmbootstrap_table)`/`git@osc:[https://gitee.com/netbuffer/ssmbootstrap_table](https://gitee.com/netbuffer/ssmbootstrap_table)        
 
-> `spring-boot-bootstrap_table(springboot)` github:[https://github.com/netbuffer/spring-boot-bootstrap_table](https://github.com/netbuffer/spring-boot-bootstrap_table)`/`git@osc:[https://git.oschina.net/netbuffer/spring-boot-bootstrap_table](https://git.oschina.net/netbuffer/spring-boot-bootstrap_table)   
+> `spring-boot-bootstrap_table(springboot)` github:[https://github.com/netbuffer/spring-boot-bootstrap_table](https://github.com/netbuffer/spring-boot-bootstrap_table)`/`git@osc:[https://gitee.com/netbuffer/spring-boot-bootstrap_table](https://gitee.com/netbuffer/spring-boot-bootstrap_table)   
 
-> `jfinal-bootstrap-table(jfinal)`github:[https://github.com/netbuffer/jfinal-bootstrap-table](https://github.com/netbuffer/jfinal-bootstrap-table)`/`git@osc:[http://git.oschina.net/gradle/jfinal-bootstrap-table](http://git.oschina.net/gradle/jfinal-bootstrap-table)  
+> `jfinal-bootstrap-table(jfinal)`github:[https://github.com/netbuffer/jfinal-bootstrap-table](https://github.com/netbuffer/jfinal-bootstrap-table)`/`git@osc:[http://gitee.com/netbuffer/jfinal-bootstrap-table](http://gitee.com/netbuffer/jfinal-bootstrap-table)  
 
-> `medoo_bootstrap_table(php5)`github:[https://github.com/netbuffer/medoo_bootstrap_table](https://github.com/netbuffer/medoo_bootstrap_table)`/`git@osc:[http://git.oschina.net/gradle/medoo_bootstrap_table](http://git.oschina.net/gradle/medoo_bootstrap_table)
+> `medoo_bootstrap_table(php5)`github:[https://github.com/netbuffer/medoo_bootstrap_table](https://github.com/netbuffer/medoo_bootstrap_table)`/`git@osc:[http://gitee.com/netbuffer/medoo_bootstrap_table](http://gitee.com/netbuffer/medoo_bootstrap_table)
